@@ -1,4 +1,4 @@
-// DEFINICIÓN DE RAMOS CON SUS REQUISITOS (abre)
+// === DATOS DE RAMOS ===
 const ramos = [
   { codigo: "morfologia", nombre: "Morfología Humana", abre: ["fisiologia", "neurociencia", "histologia"] },
   { codigo: "biocelular", nombre: "Biología Celular y Molecular", abre: ["fisiologia", "microbiologia", "histologia"] },
@@ -7,8 +7,8 @@ const ramos = [
   { codigo: "teologia", nombre: "Fundamentos de la Teología", abre: ["antropologia"] },
   { codigo: "biomatematicas", nombre: "Biomatemáticas", abre: ["bioestadisticas", "biofisica"] },
   { codigo: "quimica", nombre: "Química", abre: ["bioquimica1"] },
-  { codigo: "ingles", nombre: "Lectura Textos Médicos Inglés", abre: [] },
-  { codigo: "comunicacion", nombre: "Introducción a la Comunicación médica", abre: [] },
+  { codigo: "ingles", nombre: "Inglés Médico", abre: [] },
+  { codigo: "comunicacion", nombre: "Comunicación Médica", abre: [] },
   { codigo: "bioestadisticas", nombre: "Bioestadísticas", abre: ["metodologia"] },
   { codigo: "bioquimica1", nombre: "Bioquímica I", abre: ["bioquimica2", "microbiologia"] },
   { codigo: "biofisica", nombre: "Biofísica", abre: ["fisiologia"] },
@@ -24,7 +24,7 @@ const ramos = [
   { codigo: "histologia", nombre: "Histología", abre: ["inmunologia", "fisiopatologia", "semiologia", "patologiagral"] },
   { codigo: "epidemiologia", nombre: "Epidemiología", abre: ["saludpública"] },
   { codigo: "farmacologia", nombre: "Farmacología", abre: ["integrada1", "cienciasbasicas"] },
-  { codigo: "integracionsaberes1", nombre: "Integración de los Saberes 1", abre: [] },
+  { codigo: "integracionsaberes1", nombre: "Integración de los Saberes I", abre: [] },
   { codigo: "inmunologia", nombre: "Inmunología", abre: ["cienciasbasicas"] },
   { codigo: "fisiopatologia", nombre: "Fisiopatología", abre: ["integrada2", "cirugia", "cienciasbasicas", "geriatria"] },
   { codigo: "fundamentosaccion", nombre: "Fundamentos de Acción Médica", abre: ["bioetica"] },
@@ -32,7 +32,7 @@ const ramos = [
   { codigo: "saludpública", nombre: "Salud Pública y Gestión", abre: ["proyecto"] },
   { codigo: "semiologia", nombre: "Semiología", abre: ["integrada1", "patologiaquirurgica"] },
   { codigo: "patologiagral", nombre: "Patología General", abre: ["anatomiapatologica", "patologiaquirurgica"] },
-  { codigo: "optativo1", nombre: "Optativo de Profundización", abre: [] },
+  { codigo: "optativo1", nombre: "Optativo de Profundización I", abre: [] },
   { codigo: "integrada1", nombre: "Medicina Integrada I", abre: ["integrada2", "geriatria"] },
   { codigo: "anatomiapatologica", nombre: "Anatomía Patológica", abre: ["obstetricia", "pediatria", "cirugia", "especialidades", "neurologia", "medicinalegal"] },
   { codigo: "patologiaquirurgica", nombre: "Patología Quirúrgica", abre: ["cirugia"] },
@@ -42,17 +42,17 @@ const ramos = [
   { codigo: "bioetica", nombre: "Bioética General", abre: ["bioeticaespecial"] },
   { codigo: "cienciasbasicas", nombre: "Ciencias Básicas Aplicadas", abre: [] },
   { codigo: "proyecto", nombre: "Proyecto de Investigación", abre: [] },
-  { codigo: "geriatria", nombre: "Geriatría y Cuidados en situaciones Especiales", abre: [] },
-  { codigo: "integracionsaberes2", nombre: "Integración de los Saberes 2", abre: [] },
+  { codigo: "geriatria", nombre: "Geriatría y Cuidados Especiales", abre: [] },
+  { codigo: "integracionsaberes2", nombre: "Integración de los Saberes II", abre: [] },
   { codigo: "obstetricia", nombre: "Obstetricia y Ginecología", abre: [] },
   { codigo: "pediatria", nombre: "Pediatría y Cirugía Infantil", abre: [] },
   { codigo: "integracion5", nombre: "Integración V", abre: [] },
-  { codigo: "bioeticaespecial", nombre: "Bioética Especial", abre: ["bioeticapratica1"] },
-  { codigo: "psiquiatria", nombre: "Psiquiatría y Psicopatología", abre: [] },
+  { codigo: "bioeticaespecial", nombre: "Bioética Especial", abre: [] },
+  { codigo: "psiquiatria", nombre: "Psiquiatría", abre: [] },
   { codigo: "especialidades", nombre: "Especialidades Médico Quirúrgicas", abre: [] },
-  { codigo: "neurologia", nombre: "Neurología y Neurocirugía", abre: [] },
+  { codigo: "neurologia", nombre: "Neurología", abre: [] },
   { codigo: "medicinalegal", nombre: "Medicina Legal", abre: [] },
-  { codigo: "optativo2", nombre: "Optativo de Profundización", abre: [] },
+  { codigo: "optativo2", nombre: "Optativo de Profundización II", abre: [] },
   { codigo: "bioeticapratica1", nombre: "Práctico de Bioética Clínica I", abre: ["bioeticapratica2"] },
   { codigo: "internadopediatria", nombre: "Internado Pediatría", abre: [] },
   { codigo: "internadogineco", nombre: "Internado Ginecología y Obstetricia", abre: [] },
@@ -63,23 +63,57 @@ const ramos = [
   { codigo: "internadomedicinainterna", nombre: "Internado Medicina Interna", abre: [] }
 ];
 
-// MALLA CON ESTRUCTURA POR SEMESTRE
-const malla = [
-  { titulo: "PRIMER AÑO - I SEMESTRE", ramos: ["morfologia", "biocelular", "integracion1", "filosofia", "teologia", "biomatematicas", "quimica", "ingles", "comunicacion"] },
-  { titulo: "PRIMER AÑO - II SEMESTRE", ramos: ["morfologia", "biocelular", "integracion1", "filosofia", "teologia", "bioestadisticas", "bioquimica1", "biofisica", "introMed"] },
-  { titulo: "SEGUNDO AÑO - III SEMESTRE", ramos: ["fisiologia", "atencion", "integracion2", "antropologia", "microbiologia", "metodologia", "bioquimica2", "neurociencia", "histologia"] },
-  { titulo: "SEGUNDO AÑO - IV SEMESTRE", ramos: ["fisiologia", "atencion", "integracion2", "antropologia", "microbiologia", "epidemiologia", "farmacologia", "integracionsaberes1", "inmunologia"] },
-  { titulo: "TERCER AÑO - V SEMESTRE", ramos: ["fisiopatologia", "fundamentosaccion", "integracion3", "saludpública", "semiologia", "patologiagral", "optativo1"] },
-  { titulo: "TERCER AÑO - VI SEMESTRE", ramos: ["fisiopatologia", "fundamentosaccion", "integracion3", "saludpública", "integrada1", "anatomiapatologica", "patologiaquirurgica", "integracionsaberes1"] },
-  { titulo: "CUARTO AÑO - VII SEMESTRE", ramos: ["integrada2", "cirugia", "integracion4", "bioetica", "cienciasbasicas", "proyecto", "geriatria", "optativo1"] },
-  { titulo: "CUARTO AÑO - VIII SEMESTRE", ramos: ["integrada2", "cirugia", "integracion4", "bioetica", "cienciasbasicas", "proyecto", "geriatria", "integracionsaberes2"] },
-  { titulo: "QUINTO AÑO - IX SEMESTRE", ramos: ["obstetricia", "pediatria", "integracion5", "bioeticaespecial", "psiquiatria", "especialidades", "neurologia", "integracionsaberes2"] },
-  { titulo: "QUINTO AÑO - X SEMESTRE", ramos: ["obstetricia", "pediatria", "integracion5", "bioeticaespecial", "psiquiatria", "especialidades", "neurologia", "medicinalegal", "optativo2"] },
-  { titulo: "SEXTO AÑO - XI SEMESTRE", ramos: ["bioeticapratica1", "internadopediatria", "internadogineco", "internadoespecialidad"] },
-  { titulo: "SÉPTIMO AÑO - XII SEMESTRE", ramos: ["bioeticapratica2", "internadosaludfamiliar", "internadocirugia", "internadomedicinainterna"] }
+// === AGRUPACIÓN DE SEMESTRES POR AÑO ===
+const mallaAgrupada = [
+  {
+    anio: "1° AÑO",
+    semestres: [
+      { nombre: "I SEMESTRE", codigos: ["morfologia", "biocelular", "integracion1", "filosofia", "teologia", "biomatematicas", "quimica", "ingles", "comunicacion"] },
+      { nombre: "II SEMESTRE", codigos: ["morfologia", "biocelular", "integracion1", "filosofia", "teologia", "bioestadisticas", "bioquimica1", "biofisica", "introMed"] }
+    ]
+  },
+  {
+    anio: "2° AÑO",
+    semestres: [
+      { nombre: "III SEMESTRE", codigos: ["fisiologia", "atencion", "integracion2", "antropologia", "microbiologia", "metodologia", "bioquimica2", "neurociencia", "histologia"] },
+      { nombre: "IV SEMESTRE", codigos: ["fisiologia", "atencion", "integracion2", "antropologia", "microbiologia", "epidemiologia", "farmacologia", "integracionsaberes1", "inmunologia"] }
+    ]
+  },
+  {
+    anio: "3° AÑO",
+    semestres: [
+      { nombre: "V SEMESTRE", codigos: ["fisiopatologia", "fundamentosaccion", "integracion3", "saludpública", "semiologia", "patologiagral", "optativo1"] },
+      { nombre: "VI SEMESTRE", codigos: ["fisiopatologia", "fundamentosaccion", "integracion3", "saludpública", "integrada1", "anatomiapatologica", "patologiaquirurgica", "integracionsaberes1"] }
+    ]
+  },
+  {
+    anio: "4° AÑO",
+    semestres: [
+      { nombre: "VII SEMESTRE", codigos: ["integrada2", "cirugia", "integracion4", "bioetica", "cienciasbasicas", "proyecto", "geriatria", "optativo1"] },
+      { nombre: "VIII SEMESTRE", codigos: ["integrada2", "cirugia", "integracion4", "bioetica", "cienciasbasicas", "proyecto", "geriatria", "integracionsaberes2"] }
+    ]
+  },
+  {
+    anio: "5° AÑO",
+    semestres: [
+      { nombre: "IX SEMESTRE", codigos: ["obstetricia", "pediatria", "integracion5", "bioeticaespecial", "psiquiatria", "especialidades", "neurologia", "integracionsaberes2"] },
+      { nombre: "X SEMESTRE", codigos: ["obstetricia", "pediatria", "integracion5", "bioeticaespecial", "psiquiatria", "especialidades", "neurologia", "medicinalegal", "optativo2"] }
+    ]
+  },
+  {
+    anio: "6° AÑO",
+    semestres: [
+      { nombre: "XI SEMESTRE", codigos: ["bioeticapratica1", "internadopediatria", "internadogineco", "internadoespecialidad"] }
+    ]
+  },
+  {
+    anio: "7° AÑO",
+    semestres: [
+      { nombre: "XII SEMESTRE", codigos: ["bioeticapratica2", "internadosaludfamiliar", "internadocirugia", "internadomedicinainterna"] }
+    ]
+  }
 ];
 
-// FUNCIONES DE INTERACCIÓN
 function crearRamoHTML(ramoData) {
   const div = document.createElement('div');
   div.className = 'ramo bloqueado';
@@ -103,26 +137,43 @@ function crearRamoHTML(ramoData) {
 
 function cargarMalla() {
   const contenedor = document.getElementById('malla');
-  malla.forEach((bloque) => {
-    const seccion = document.createElement('div');
-    seccion.classList.add('semestre');
+
+  mallaAgrupada.forEach(bloque => {
+    const añoDiv = document.createElement('div');
+    añoDiv.classList.add('año');
+
     const titulo = document.createElement('h2');
-    titulo.textContent = bloque.titulo;
-    seccion.appendChild(titulo);
+    titulo.textContent = bloque.anio;
+    añoDiv.appendChild(titulo);
 
-    const container = document.createElement('div');
-    container.classList.add('ramos-container');
+    const semestresDiv = document.createElement('div');
+    semestresDiv.classList.add('semestres');
 
-    bloque.ramos.forEach(codigo => {
-      const ramoData = ramos.find(r => r.codigo === codigo);
-      if (ramoData) {
-        const div = crearRamoHTML(ramoData);
-        container.appendChild(div);
-      }
+    bloque.semestres.forEach(sem => {
+      const semestreDiv = document.createElement('div');
+      semestreDiv.classList.add('semestre');
+
+      const nombre = document.createElement('h3');
+      nombre.textContent = sem.nombre;
+      semestreDiv.appendChild(nombre);
+
+      const container = document.createElement('div');
+      container.classList.add('ramos-container');
+
+      sem.codigos.forEach(codigo => {
+        const ramoData = ramos.find(r => r.codigo === codigo);
+        if (ramoData) {
+          const div = crearRamoHTML(ramoData);
+          container.appendChild(div);
+        }
+      });
+
+      semestreDiv.appendChild(container);
+      semestresDiv.appendChild(semestreDiv);
     });
 
-    seccion.appendChild(container);
-    contenedor.appendChild(seccion);
+    añoDiv.appendChild(semestresDiv);
+    contenedor.appendChild(añoDiv);
   });
   desbloquearIniciales();
 }
